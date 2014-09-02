@@ -16,6 +16,6 @@ def test_gen_pass():
     >>> gen_pass('k', 'n', length=666)
     Traceback (most recent call last):
         ...
-    ValueError: length (666) > MAX_LENGTH (56)
+    ValueError: length(666) > max_length(56)
     """
     pass

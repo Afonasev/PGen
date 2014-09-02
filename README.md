@@ -6,11 +6,34 @@ Build Status
 
 Version
 -------
-0.1.0
+0.2.0
 
 Description
 -----------
 Online/Cli passwords generator.
+
+Cli interface use case:
+-----------------------
+```bash
+$ manage.py gen
+Login: user
+Site: site.com
+Password:
+Repeat for confirmation:
+Your key: 22e0c92883
+```
+
+```bash
+$ manage.py gen --length 5
+...
+Your key: 22e0c
+```
+
+```bash
+$ manage.py gen -l 5
+...
+Your key: 22e0c
+```
 
 License
 -------

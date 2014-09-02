@@ -1,0 +1,9 @@
+# requirements for work app.py
+flask
+
+# requirements for manage.py
+click
+
+# requirements for tests
+nose
+coverage

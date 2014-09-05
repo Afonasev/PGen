@@ -2,11 +2,12 @@
 
 ####Build Status [![Build Status](https://drone.io/github.com/Afonasev/PGen/status.png)](https://drone.io/github.com/Afonasev/PGen/latest)
 
-####Version 0.3.0
+####Version 0.3.1
 
 ###Description
 **Online/Cli** passwords generator.
 
+###How to use
 For run tests: `$ manage.py test`
 
 For run server: `$ manage.py run`

@@ -12,10 +12,6 @@ try:
 except ImportError:
     import example_config as config
 
-app.secret_key = config.secret_key
-app.config['STATIC_FOLDER'] = config.static_path
-app.config['TEMPLATE_FOLDER'] = config.template_path
-
 
 @click.group()
 def cli():
@@ -25,6 +21,11 @@ def cli():
 @cli.command()
 def run():
     click.secho('Running server for PGen', fg='green')
+
+    app.secret_key = config.secret_key
+    app.config['STATIC_FOLDER'] = config.static_path
+    app.config['TEMPLATE_FOLDER'] = config.template_path
+
     app.run(debug=config.debug)
 
 

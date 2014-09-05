@@ -1,20 +1,18 @@
-PGen
-====
-Build Status
-------------
-[![Build Status](https://drone.io/github.com/Afonasev/PGen/status.png)](https://drone.io/github.com/Afonasev/PGen/latest)
+#PGen
 
-Version
--------
-0.2.0
+####Build Status [![Build Status](https://drone.io/github.com/Afonasev/PGen/status.png)](https://drone.io/github.com/Afonasev/PGen/latest)
 
-Description
------------
-Online/Cli passwords generator.
+####Version 0.3.0
 
-Cli interface use case:
------------------------
-```bash
+###Description
+**Online/Cli** passwords generator.
+
+For run tests: `$ manage.py test`
+
+For run server: `$ manage.py run`
+
+For generate password with Cli:
+```
 $ manage.py gen
 Login: user
 Site: site.com
@@ -23,24 +21,25 @@ Repeat for confirmation:
 Your key: 22e0c92883
 ```
 
-```bash
+```
 $ manage.py gen --length 5
 ...
 Your key: 22e0c
 ```
 
-```bash
-$ manage.py gen -l 5
-...
-Your key: 22e0c
+```
+$ manage.py gen --login user --site site.com
+Password:
+Repeat for confirmation:
+Your key: 22e0c92883
 ```
 
-License
--------
+For more information about **PGen** configuration see example_config.py
 
-The MIT License (MIT)
+###License
+**The MIT License** (MIT)
 
-Copyright (c) 2014 Afonasev Eugene
+Copyright (c) 2014 **Afonasev Eugene**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

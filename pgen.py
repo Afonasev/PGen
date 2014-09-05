@@ -1,8 +1,8 @@
 import hashlib
 
 
-def gen_pass(password, login, site=None, length=10):
-    string = ''.join(x for x in [password, login, site] if x)
+def gen_pass(login, password, site=None, secret_key=None, length=10):
+    string = ''.join(x for x in [login, password, site, secret_key] if x)
     str_hash = hashlib.sha224(string.encode()).hexdigest()
 
     max_length = len(str_hash)

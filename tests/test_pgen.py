@@ -1,8 +1,7 @@
-from pgen import gen_pass
-
 
 def test_gen_pass():
     """
+    >>> from pgen import gen_pass
     >>> gen_pass('k', 'n')
     '6b0a2256a0'
     >>> gen_pass('k', 'n') == gen_pass('k', 'n')
@@ -11,6 +10,7 @@ def test_gen_pass():
     True
     >>> len(gen_pass('k', 'n'))
     10
+    >>> assert gen_pass('k', None)
     >>> len(gen_pass('k', 'n', length=15))
     15
     >>> gen_pass('k', 'n', length=666)

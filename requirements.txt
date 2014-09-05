@@ -1,4 +1,4 @@
-# requirements for work app.py
+# requirements for app.py
 flask
 
 # requirements for manage.py

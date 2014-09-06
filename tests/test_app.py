@@ -9,28 +9,37 @@ class TestApp():
             'site': 'yandex.ru',
             'length': 10,
         },
-        'result': '682ee27b6d',
+        'result': '0E8f1Ae2Cb',
+        'result_when_ignore': '7D4e7Da2C3',
     }
 
     def setUp(self):
         self.app = app.test_client()
 
     def test_page_not_found(self):
-        assert 'Page not found!' in self.app.get('/smt_page').data.decode()
+        msg = 'Page not found!'
+        assert msg in self.app.get('/smt_page').data.decode()
 
-    def test_index(self):
-        assert 'Get your password!' in self.app.get('/').data.decode()
+    def test_form(self):
+        msg = 'The Form of the password generation'
+        assert msg in self.app.get('/').data.decode()
 
-    def test_show_pass(self):
+    def test_result(self):
         result = self.app.post(
-            '/show', data=self.test_case['data'],
+            '/result', data=self.test_case['data'],
         )
         html_page = result.data.decode()
-        assert 'Your password:' in html_page
+
+        msg = 'Your new password'
+        assert msg in html_page
         assert self.test_case['result'] in html_page
 
-    def test_get_pass(self):
-        result = self.app.post(
-            '/get', data=self.test_case['data'],
-        )
+    def test_get(self):
+        _data = self.test_case['data'].copy()
+
+        result = self.app.post('/get', data=_data)
         assert self.test_case['result'] == result.data.decode()
+
+        _data['ignore'] = True
+        result = self.app.post('/get', data=_data)
+        assert self.test_case['result_when_ignore'] == result.data.decode()

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+  <title>PGen - {% block title %}{% endblock %}</title>
+
+  <style type="text/css">
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px 0 0 100px;
+    }
+
+    .form {
+      max-width: 300px;
+      padding: 19px 29px 5px;
+      margin: 0 auto 20px;
+      border: 1px solid #e5e5e5;
+    }
+    .form .form-heading,
+    .form .checkbox {
+      margin-bottom: 10px;
+    }
+    .form input[type="text"],
+    .form input[type="password"],
+    .form input[type="number"] {
+      font-size: 16px;
+      height: auto;
+      margin-bottom: 15px;
+      padding: 7px 9px;
+    }
+    .hero-unit {
+      max-width: 500px;
+      margin: 0 auto 20px;
+    }
+  </style>
+
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <header class="hero-unit">
+    <h1>Hello, Anonymous!</h1>
+    <p>PGen - service to generate passwords. Every time entering the same data, you can be sure that the system will return you to the same password.
+  </header>
+
+  <section class="container form">
+    <h1 class="form-heading">
+      <a href="{{ url_for('form') }}">Pgen</a>
+    </h1>
+    {% block content %}{% endblock %}
+  </section>
+
+  <hr>
+
+  <footer>
+    {% block footer %}
+    &copy; Copyright 2014 by <a href="https://github.com/Afonasev/">Afonasev Eugene</a>.
+    {% endblock %}
+  </footer>
+
+  <a href="https://github.com/Afonasev/PGen">
+  <img style="position: absolute; top: 0; right: 0; border: 0;"
+       src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+       alt="Fork me on GitHub"
+       data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+</body>
+</html>

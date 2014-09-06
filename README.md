@@ -2,15 +2,15 @@
 
 ####Build Status [![Build Status](https://drone.io/github.com/Afonasev/PGen/status.png)](https://drone.io/github.com/Afonasev/PGen/latest)
 
-####Version 0.3.1
+####Version 0.4.0
 
 ###Description
-**Online/Cli** passwords generator.
+**Online/Cli** passwords generator. Every time entering the same data, you can be sure that the system will return you to the same password.
 
 ###How to use
 For run tests: `$ manage.py test`
 
-For run server: `$ manage.py run`
+For start server: `$ manage.py run`
 
 For generate password with Cli:
 ```

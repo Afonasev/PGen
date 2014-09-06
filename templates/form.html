@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}The Form of the password generation{% endblock %}
+{% block content %}
+  <form action="/result" method="post">
+    Login<input type=text name=login autofocus required class="input-block-level">
+    Password<input type=password name=password required class="input-block-level">
+    Site<input type=text name=site class="input-block-level">
+    Length<input type=number name=length required value=10 class="input-block-level">
+
+    <label class="checkbox">
+      <input type="checkbox" name=ignore value="remember-me">
+      Ignore the secret key from the server
+    </label>
+
+    <button class="btn btn-large btn-primary" type="submit">Get new password</button>
+  </form>
+{% endblock %}

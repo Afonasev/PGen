@@ -1,6 +1,6 @@
-<meta charset="UTF-8">
-<title>Your password</title>
-
-<h1><a href="{{ url_for('index') }}">Pgen</a></h1>
-
-<p>Your password: <strong>{{ password }}</strong></p>
+{% extends "base.html" %}
+{% block title %}Your new password{% endblock %}
+{% block content %}
+  Your new password:
+  <input type=text value="{{ password }}" disabled class="input-block-level">
+{% endblock %}

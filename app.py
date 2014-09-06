@@ -11,24 +11,28 @@ app.jinja_env.line_statement_prefix = '%'
 
 
 @app.route("/")
-def index():
-    return render_template('index.html')
+def form():
+    return render_template('form.html')
 
 
-@app.route("/show", methods=['POST'])
-def show_pass():
-    return render_template('result.html', password=get_pass())
+@app.route("/result", methods=['POST'])
+def result():
+    return render_template('result.html', password=get())
 
 
 @app.route("/get", methods=['POST'])
-def get_pass():
-    return pgen.gen_pass(
-        login=request.form['login'],
-        password=request.form['password'],
-        site=request.form['site'],
-        secret_key=app.secret_key,
-        length=int(request.form['length']),
-    )
+def get():
+    user_data = {
+        'login': request.form['login'],
+        'password': request.form['password'],
+        'site': request.form['site'],
+        'length': int(request.form['length']),
+    }
+
+    if not request.form.get('ignore'):
+        user_data['secret_key'] = app.secret_key
+
+    return pgen.gen_pass(**user_data)
 
 
 @app.errorhandler(404)

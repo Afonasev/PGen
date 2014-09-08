@@ -1,5 +1,11 @@
 # create config.py with your parameters
-debug = True
-secret_key = 'VERY SECRET KEY'
-static_path = './static/'
-template_path = './templates/'
+import os
+
+
+_basedir = os.path.abspath(os.path.dirname(__file__))
+
+STATIC_PATH = os.path.join(_basedir, './pgen/static/')
+TEMPLATE_PATH = os.path.join(_basedir, './pgen/templates/')
+
+DEBUG = True
+SECRET_KEY = 'VERY SECRET KEY'

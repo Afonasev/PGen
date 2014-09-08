@@ -2,7 +2,7 @@
 
 ####Build Status [![Build Status](https://drone.io/github.com/Afonasev/PGen/status.png)](https://drone.io/github.com/Afonasev/PGen/latest)
 
-####Version 0.3.2
+####Version 0.3.3
 
 ###Description
 **Online/Cli** passwords generator. Every time entering the same data, you can be sure that the system will return you to the same password.

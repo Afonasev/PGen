@@ -1,13 +1,8 @@
-from flask import Flask
 from flask import request
 from flask import render_template
 
-import pgen
-
-
-app = Flask(__name__)
-app.jinja_env.cache = {}
-app.jinja_env.line_statement_prefix = '%'
+from . import app
+from . import utils
 
 
 @app.route("/")
@@ -32,7 +27,7 @@ def get():
     if not request.form.get('ignore'):
         user_data['secret_key'] = app.secret_key
 
-    return pgen.gen_pass(**user_data)
+    return utils.gen_pass(**user_data)
 
 
 @app.errorhandler(404)

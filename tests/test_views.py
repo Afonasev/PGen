@@ -1,4 +1,4 @@
-from app import app
+from pgen import app
 
 
 class TestApp():

@@ -1,4 +1,4 @@
-# create config.py with your parameters
+# make config.py with your parameters
 import os
 
 

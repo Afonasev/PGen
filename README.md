@@ -1,13 +1,10 @@
 #PGen
+v0.3.3 [![Build Status](https://drone.io/github.com/Afonasev/PGen/status.png)](https://drone.io/github.com/Afonasev/PGen/latest)
 
-####Build Status [![Build Status](https://drone.io/github.com/Afonasev/PGen/status.png)](https://drone.io/github.com/Afonasev/PGen/latest)
-
-####Version 0.3.3
-
-###Description
+####Description
 **Online/Cli** passwords generator. Every time entering the same data, you can be sure that the system will return you to the same password.
 
-###How to use
+####How to use
 For run tests: `$ manage.py test`
 
 For start server: `$ manage.py run`
@@ -21,13 +18,11 @@ Password:
 Repeat for confirmation:
 Your key: 22e0c92883
 ```
-
 ```
 $ manage.py gen --length 5
 ...
 Your key: 22e0c
 ```
-
 ```
 $ manage.py gen --login user --site site.com
 Password:
@@ -37,7 +32,7 @@ Your key: 22e0c92883
 
 For more information about **PGen** configuration see example_config.py
 
-###License
+####License
 **The MIT License** (MIT)
 
 Copyright (c) 2014 **Afonasev Eugene**
